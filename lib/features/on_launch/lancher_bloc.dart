@@ -1,4 +1,4 @@
-import 'package:covid19_app_fluter/core/base_bloc.dart';
+import 'package:outbreak_tracker/core/base_bloc.dart';
 
 class LauncherBloc extends BaseBloc {
   @override

@@ -1,13 +1,13 @@
-import 'package:covid19_app_fluter/app/router.dart';
-import 'package:covid19_app_fluter/ui/screens/launcher/launcher_page.dart';
 import 'package:flutter/material.dart';
+import 'package:outbreak_tracker/app/router.dart';
+import 'package:outbreak_tracker/ui/screens/launcher/launcher_page.dart';
 
-class Covid19App extends StatelessWidget {
+class OutbreakTrackerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      title: '',
+      title: 'OutbreakTracker',
       onGenerateRoute: AppRouter.generateRoute,
       initialRoute: LauncherPage.routeName,
     );

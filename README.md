@@ -1,4 +1,4 @@
-# covid19_app_fluter
+# outbreak_tracker
 
 A new Flutter project.
 

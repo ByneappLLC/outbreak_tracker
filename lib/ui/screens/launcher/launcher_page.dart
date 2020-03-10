@@ -6,8 +6,9 @@ class LauncherPage extends StatelessWidget {
   static PageRoute newInstance() {
     return MaterialPageRoute(builder: (_) => LauncherPage());
   }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }

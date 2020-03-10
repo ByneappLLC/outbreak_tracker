@@ -1,9 +1,10 @@
-import 'package:covid19_app_fluter/app/app.dart';
-import 'package:covid19_app_fluter/di/initialize.dart' as di;
 import 'package:flutter/material.dart';
+import 'package:outbreak_tracker/app/app.dart';
+import 'package:outbreak_tracker/di/initialize.dart' as di;
 
 void main() async {
-  di.initialize();
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.initialize();
 
-  runApp(Covid19App());
+  runApp(OutbreakTrackerApp());
 }
