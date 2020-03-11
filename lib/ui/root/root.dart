@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:outbreak_tracker/ui/root/main_bottom_bar.dart';
 
 class RootWidget extends StatefulWidget {
   static const String routeName = '/';
@@ -16,6 +17,8 @@ class RootWidget extends StatefulWidget {
 class _RootWidgetState extends State<RootWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      bottomNavigationBar: MainBottomBar(),
+    );
   }
 }
