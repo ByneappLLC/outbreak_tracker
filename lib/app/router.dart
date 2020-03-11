@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:outbreak_tracker/ui/screens/home/home_page.dart';
 import 'package:outbreak_tracker/ui/screens/launcher/launcher_page.dart';
-import 'package:flutter/material.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
