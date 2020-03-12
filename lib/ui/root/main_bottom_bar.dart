@@ -19,7 +19,7 @@ class MainBottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+          IconButton(icon: Icon(Icons.assessment), onPressed: () {}),
           IconButton(icon: Icon(Icons.map), onPressed: () {}),
           IconButton(icon: Icon(Icons.info), onPressed: () {}),
           IconButton(icon: Icon(Icons.show_chart), onPressed: () {})
