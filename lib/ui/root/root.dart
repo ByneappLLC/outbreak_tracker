@@ -22,6 +22,7 @@ class _RootWidgetState extends State<RootWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: MainBody(),
       bottomNavigationBar: MainBottomBar(),
     );
