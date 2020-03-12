@@ -2,9 +2,19 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:outbreak_tracker/core/base_bloc.dart';
 import 'package:outbreak_tracker/features/home/home_bloc.dart';
+import 'package:outbreak_tracker/ui/screens/overview/overview_page.dart';
 
 class MainBody extends StatelessWidget {
-  final List<Color> _colors = [Colors.blue, Colors.red, Colors.yellow, Colors.orange];
+  final List<Widget> _pages = [
+    OverViewPage(
+      key: ValueKey<String>('overview_page'),
+    ),
+    Container(
+      color: Colors.orange,
+    ),
+    Container(),
+    Container(),
+  ];
   @override
   Widget build(BuildContext context) {
     final _bloc = BlocProvider.of<HomeBloc>(context);
@@ -24,10 +34,7 @@ class MainBody extends StatelessWidget {
                 child: child,
               );
             },
-            child: Container(
-              key: ValueKey(snapshot.data),
-              color: _colors[snapshot.data],
-            ),
+            child: _pages[snapshot.data],
           );
         });
   }
