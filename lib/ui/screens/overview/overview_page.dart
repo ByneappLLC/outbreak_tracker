@@ -12,6 +12,7 @@ class OverViewPage extends StatelessWidget {
       child: SafeArea(
           bottom: false,
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: <Widget>[
                 Padding(
