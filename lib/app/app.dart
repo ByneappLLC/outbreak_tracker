@@ -8,7 +8,7 @@ class OutbreakTrackerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData(fontFamily: 'Sen', brightness: Brightness.dark),
       title: 'OutbreakTracker',
       navigatorKey: sl<NavigationService>().navigatorKey,
       onGenerateRoute: AppRouter.generateRoute,
