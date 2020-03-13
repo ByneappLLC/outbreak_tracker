@@ -9,44 +9,50 @@ class OverViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      child: SafeArea(
-          bottom: false,
-          child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        'Hllo',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
-                      ),
-                      //IconButton(icon: Icon(Icons.access_alarm), onPressed: null)
-                    ],
+      child: Stack(
+        children: <Widget>[
+          Container(
+              margin: EdgeInsets.only(top: 70),
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 20,
+                    ),
+                    GlobalSituationCard(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    StaredCountryCard(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TopCountries(),
+                    SizedBox(
+                      height: 90,
+                    )
+                  ],
+                ),
+              )),
+          SafeArea(
+            child: Container(
+              color: Colors.black,
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'Hllo',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                GlobalSituationCard(),
-                SizedBox(
-                  height: 20,
-                ),
-                StaredCountryCard(),
-                SizedBox(
-                  height: 20,
-                ),
-                TopCountries(),
-                SizedBox(
-                  height: 90,
-                )
-              ],
+                  //IconButton(icon: Icon(Icons.access_alarm), onPressed: null)
+                ],
+              ),
             ),
-          )),
+          ),
+        ],
+      ),
     );
   }
 }
