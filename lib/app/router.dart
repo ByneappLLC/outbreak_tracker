@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:outbreak_tracker/ui/root/root.dart';
+import 'package:outbreak_tracker/ui/home/home.dart';
 import 'package:outbreak_tracker/ui/screens/launcher/launcher_page.dart';
 
 class AppRouter {
