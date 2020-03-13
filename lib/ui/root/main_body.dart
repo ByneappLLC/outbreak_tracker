@@ -10,10 +10,17 @@ class MainBody extends StatelessWidget {
       key: ValueKey<String>('overview_page'),
     ),
     Container(
+      key: ValueKey('orange'),
       color: Colors.orange,
     ),
-    Container(),
-    Container(),
+    Container(
+      key: ValueKey('blue'),
+      color: Colors.blue,
+    ),
+    Container(
+      key: ValueKey('white'),
+      color: Colors.white70,
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -28,9 +35,8 @@ class MainBody extends StatelessWidget {
               Animation<double> animation,
               Animation<double> secondaryAnimation,
             ) {
-              return FadeThroughTransition(
+              return FadeScaleTransition(
                 animation: animation,
-                secondaryAnimation: secondaryAnimation,
                 child: child,
               );
             },
