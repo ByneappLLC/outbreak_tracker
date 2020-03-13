@@ -19,7 +19,11 @@ class OverViewPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text('Hllo'),
+                      Text(
+                        'Hllo',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      ),
                       //IconButton(icon: Icon(Icons.access_alarm), onPressed: null)
                     ],
                   ),
