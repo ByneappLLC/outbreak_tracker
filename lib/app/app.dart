@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:outbreak_tracker/app/navigator.dart';
 import 'package:outbreak_tracker/app/router.dart';
 import 'package:outbreak_tracker/di/di_instance.dart';
@@ -9,9 +10,9 @@ class OutbreakTrackerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Sen',
-        brightness: Brightness.dark,
-      ),
+          fontFamily: 'Sen',
+          brightness: Brightness.dark,
+          appBarTheme: AppBarTheme(brightness: Brightness.light)),
       title: 'OutbreakTracker',
       navigatorKey: sl<NavigationService>().navigatorKey,
       onGenerateRoute: AppRouter.generateRoute,

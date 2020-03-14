@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:outbreak_tracker/core/base_bloc.dart';
+import 'package:outbreak_tracker/ui/home/bottom_bar_animation.dart';
 
 const int OVERVIEW = 0;
 const int MAP = 1;
@@ -15,29 +16,19 @@ class HomeBloc extends BaseBloc {
   bool _isBottomBarHidden = false;
   double _prevOffset = 0;
 
-  ScrollController mainScrollController = ScrollController();
+  BottomBarAnimator bottomBarAnimator;
+  ScrollController scrollController;
 
-  HomeBloc() {
-    mainScrollController.addListener(() {
-      if (mainScrollController.offset > _prevOffset) {
-        _prevOffset = mainScrollController.offset;
-        if (!_isBottomBarHidden) {
-          _isBottomBarHidden = true;
-          print('hide');
-        }
-      } else if (mainScrollController.offset < _prevOffset) {
-        _prevOffset = mainScrollController.offset;
-        if (_isBottomBarHidden) {
-          _isBottomBarHidden = false;
-          print('show');
-        }
-      } else if (mainScrollController.offset == 0) {
-        if (_isBottomBarHidden) {
-          _isBottomBarHidden = false;
-          print('show');
-        }
-      }
-    });
+  initAnimator(AnimationController controller) {
+    if (scrollController == null) {
+      scrollController = ScrollController();
+    }
+    if (bottomBarAnimator == null) {
+      bottomBarAnimator = BottomBarAnimator(
+        controller,
+        scrollController,
+      );
+    }
   }
 
   openOverView() {
