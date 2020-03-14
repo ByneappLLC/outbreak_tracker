@@ -32,6 +32,7 @@ class GlobalSituationCard extends StatelessWidget {
 class _Numbers extends StatelessWidget {
   _content(String count, String attr, Widget icon, String percentage) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         Column(
           children: <Widget>[

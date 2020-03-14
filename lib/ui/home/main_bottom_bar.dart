@@ -6,7 +6,8 @@ class MainBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _bloc = BlocProvider.of<HomeBloc>(context);
-    return Container(
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 800),
       margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
       height: 70,
       decoration: BoxDecoration(
@@ -26,7 +27,8 @@ class MainBottomBar extends StatelessWidget {
               icon: Icon(Icons.assessment), onPressed: _bloc.openOverView),
           IconButton(icon: Icon(Icons.map), onPressed: _bloc.openMap),
           IconButton(icon: Icon(Icons.info), onPressed: _bloc.openInfo),
-          IconButton(icon: Icon(Icons.show_chart), onPressed: _bloc.openStatistics)
+          IconButton(
+              icon: Icon(Icons.show_chart), onPressed: _bloc.openStatistics)
         ],
       ),
     );

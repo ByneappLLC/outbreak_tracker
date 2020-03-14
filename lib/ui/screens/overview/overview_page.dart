@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:outbreak_tracker/core/base_bloc.dart';
+import 'package:outbreak_tracker/features/home/home_bloc.dart';
 import 'package:outbreak_tracker/ui/screens/overview/widgets/global_situation.dart';
 import 'package:outbreak_tracker/ui/screens/overview/widgets/stared_country.dart';
 import 'package:outbreak_tracker/ui/screens/overview/widgets/top_countries.dart';
@@ -7,6 +9,7 @@ class OverViewPage extends StatelessWidget {
   const OverViewPage({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final _homeBloc = BlocProvider.of<HomeBloc>(context);
     return Container(
       color: Colors.black,
       child: Stack(
@@ -14,6 +17,7 @@ class OverViewPage extends StatelessWidget {
           Container(
               margin: EdgeInsets.only(top: 70),
               child: SingleChildScrollView(
+                controller: _homeBloc.mainScrollController,
                 physics: BouncingScrollPhysics(),
                 child: Column(
                   children: <Widget>[
@@ -21,6 +25,10 @@ class OverViewPage extends StatelessWidget {
                       height: 20,
                     ),
                     GlobalSituationCard(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    StaredCountryCard(),
                     SizedBox(
                       height: 20,
                     ),
