@@ -10,7 +10,8 @@ class RootWidget extends StatefulWidget {
 
   static PageRoute init() {
     return MaterialPageRoute(builder: (_) {
-      return BlocProvider(child: RootWidget(), bloc: sl<HomeBloc>());
+      final bloc = sl<HomeBloc>();
+      return BlocProvider(child: RootWidget(), bloc: bloc);
     });
   }
 
@@ -25,7 +26,7 @@ class _RootWidgetState extends State<RootWidget> with TickerProviderStateMixin {
   void initState() {
     _homeBloc = BlocProvider.of<HomeBloc>(context);
     _homeBloc.initAnimator(AnimationController(
-        vsync: this, duration: Duration(milliseconds: 500)));
+        vsync: this, duration: Duration(milliseconds: 300)));
     super.initState();
   }
 

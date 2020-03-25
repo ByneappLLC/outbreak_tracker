@@ -13,9 +13,6 @@ class HomeBloc extends BaseBloc {
   StreamController<int> _pageController = StreamController<int>();
   Stream<int> get pageView => _pageController.stream;
 
-  bool _isBottomBarHidden = false;
-  double _prevOffset = 0;
-
   BottomBarAnimator bottomBarAnimator;
   ScrollController scrollController;
 
